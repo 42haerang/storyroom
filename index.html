@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>storyroom</title>
+    <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/easygpt/default.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-family: 'CircularStd', 'Helvetica', sans-serif; /* 폰트 설정 */
+        }
+
+        .hero-section {
+            background-color: purple; /* 배경색 설정 */
+            color: white; /* 글씨색 설정 */
+            text-align: left; /* 왼쪽 정렬 설정 */
+            padding: 50px 20px; /* 여백 설정 */
+            position: relative;
+        }
+
+        .hero-section h1 {
+            font-size: 2rem; /* 제목 폰트 크기 설정 */
+            font-weight: bold; /* 제목 폰트 굵기 설정 */
+            margin-bottom: 10px; /* 제목과 소제목 사이 여백 설정 */
+        }
+
+        .hero-section h2 {
+            font-size: 1.2rem; /* 소제목 폰트 크기 설정 */
+        }
+
+        .options {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .option-item {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+
+        .option-item:last-child {
+            margin-left: 0;
+        }
+
+        .content-section {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <div class="hero-section">
+        <h1>이야기방</h1>
+        <h2>당신에게 편안함을 주는 곳</h2>
+        <div class="options">
+            <div class="option-item" onclick="showWebNovel()">웹소설</div>
+            <div>|  <div>
+            <div class="option-item" onclick="showWebToon()">웹툰</div>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="content-section" id="webNovelContent">
+        <!-- Web소설 목록을 보여주는 내용을 추가할 수 있습니다. -->
+        <p>웹소설 목록이 여기에 나옵니다.</p>
+    </div>
+
+    <div class="content-section" id="webToonContent" style="display: none;">
+        <!-- Web툰 목록을 보여주는 내용을 추가할 수 있습니다. -->
+        <p>웹툰 목록이 여기에 나옵니다.</p>
+    </div>
+
+    <script>
+        function showWebNovel() {
+            document.getElementById("webNovelContent").style.display = "block";
+            document.getElementById("webToonContent").style.display = "none";
+        }
+
+        function showWebToon() {
+            document.getElementById("webNovelContent").style.display = "none";
+            document.getElementById("webToonContent").style.display = "block";
+        }
+    </script>
+</body>
+
+</html>
